@@ -41,7 +41,7 @@ class PositionEmbeddingLayer(tf.keras.layers.Layer):
         return config
 
 def make_charformer(seq_len,vocsize,emb_dim,layers,heads,hmul):
-    inl = tf.keras.layers.Input(seq_len)
+    inl = tf.keras.layers.Input((seq_len,))
     nb = PositionEmbeddingLayer(seq_len,vocsize+1,emb_dim)(inl)
     l = nb
 
